@@ -149,6 +149,9 @@ Window Action Commands:
         MAXIMIZED_HORZ - maximize the window horizontally
         MAXIMIZED_VERT - maximize the window vertically
         MAXIMIZED - maximize the window both horizontally and vertically
+        ACTIVE - activate (unminimize, raise, and focus) the window; --remove
+                 minimizes it; --toggle activates it if it isn't the active
+                 window, or minimizes it if it is
 
         NOTE: You can specify multiple --add, --remove, and --toggle options in a
         single command. For example, you can do:

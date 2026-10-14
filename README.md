@@ -100,6 +100,8 @@ These commands either take a window-id argument, or use the window stack.
     - demands_attention
     - no_border
     - minimized
+    - active (kdotool-specific: not a real EWMH state; `--toggle active`
+      activates the window if it isn't active, or minimizes it if it is)
   - MISSING:
     - modal
     - sticky

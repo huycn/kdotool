@@ -221,6 +221,17 @@ fn generate_step(
                                             "let t = {new_state}; maximizeVert = maximizeHorz = t; "
                                         );
                                         opt_windowstate.push_str(&js);
+                                    } else if key == "active" {
+                                        let activate_js = "w.minimized = false; workspace_setActiveWindow(w); workspace_raiseWindow(w); ";
+                                        let js = match option.as_str() {
+                                            "add" => activate_js.to_string(),
+                                            "remove" => "w.minimized = true; ".to_string(),
+                                            "toggle" => format!(
+                                                "if (workspace_activeWindow() && workspace_activeWindow().internalId == w.internalId) {{ w.minimized = true; }} else {{ {activate_js} }} "
+                                            ),
+                                            _ => unreachable!(),
+                                        };
+                                        opt_windowstate.push_str(&js);
                                     } else {
                                         return Err(anyhow!("unsupported property '{key}'"));
                                     }
