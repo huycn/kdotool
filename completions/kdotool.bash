@@ -23,7 +23,7 @@ _kdotool() {
       COMPREPLY=($(compgen -W '
         above below skip_taskbar skip_pager fullscreen shaded
         demands_attention no_border minimized
-        maximized_horz maximized_vert maximized
+        maximized_horz maximized_vert maximized active
       ' -- "$cur"))
       return
       ;;
